@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StartActivity"
+    android:background="@drawable/background">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:background="#9500FF66"
+        android:fontFamily="@font/aclonica"
+        android:text="Trekker's Den"
+        android:textColor="#000000"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="300dp"
+        android:text="Register"
+        app:backgroundTint="#A800BCD4"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register"
+        android:layout_marginTop="50dp"
+        android:text="Login"
+        app:backgroundTint="#A800BCD4"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
