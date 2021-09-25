@@ -76,8 +76,9 @@ public class MainActivity extends AppCompatActivity {
 
                 String name = itemObj.getString("name");
                 String state = itemObj.getString("state");
+                String location = itemObj.getString("location");
 
-                treklocations trekloc = new treklocations(name,state);
+                treklocations trekloc = new treklocations(name,state,location);
                 viewItems.add(trekloc);
             }
 

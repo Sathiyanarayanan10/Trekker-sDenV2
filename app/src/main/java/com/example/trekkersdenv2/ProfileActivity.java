@@ -46,6 +46,7 @@ public class ProfileActivity extends AppCompatActivity {
         profilePic=findViewById(R.id.profilePic);
         logoutBtn=findViewById(R.id.logoutBtn);
         emailTv=findViewById(R.id.email);
+        nameTv=findViewById(R.id.name);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 

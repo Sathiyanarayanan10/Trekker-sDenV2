@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText email;
@@ -60,6 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(RegisterActivity.this,"Registered successfully",Toast.LENGTH_SHORT).show();
+                    FirebaseDatabase.getInstance().getReference().child("Users").push().child("Name").setValue(txt_name);
                     startActivity(new Intent(RegisterActivity.this,MainActivity.class));
                     finish();
                 }

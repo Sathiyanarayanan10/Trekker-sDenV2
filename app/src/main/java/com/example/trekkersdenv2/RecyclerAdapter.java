@@ -1,6 +1,8 @@
 package com.example.trekkersdenv2;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,11 +28,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
         private TextView name;
         private TextView state;
+        private String location;
 
         public ItemViewHolder(@NonNull  View itemView) {
             super(itemView);
             name=(TextView) itemView.findViewById(R.id.name);
             state=(TextView) itemView.findViewById(R.id.state);
+            location="";
         }
     }
 
@@ -63,10 +67,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
                 itemViewHolder.name.setText(trekloc.getName());
                 itemViewHolder.state.setText(trekloc.getState());
+
+                // added this
+                viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String location= trekloc.getLocation();;
+                        Intent intent = new Intent(Intent.ACTION_VIEW,
+                                Uri.parse(location));
+                        intent.setPackage("com.google.android.apps.maps");
+
+                        context.startActivity(intent);
+                    }
+                });
         }
-
-
-
     }
 
     @Override
